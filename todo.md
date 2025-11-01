@@ -9,4 +9,8 @@
 - [x] Implementar design responsivo
 - [x] Adicionar animações e micro-interações
 - [x] Testar navegação e layout
-- [ ] Criar checkpoint do projeto
+- [x] Criar checkpoint do projeto
+- [x] Criar documento PDF profissional do portfólio
+- [x] Adicionar informação sobre parceria Gautica no website e PDF
+- [x] Criar 6 imagens de exemplo para galeria de projetos
+- [x] Implementar galeria de imagens na seção de Projetos Anteriores

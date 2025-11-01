@@ -11,8 +11,10 @@ import {
   Briefcase,
   Award,
   Users,
-  TrendingUp
+  TrendingUp,
+  ExternalLink
 } from "lucide-react";
+import ProjectGallery from "@/components/ProjectGallery";
 
 export default function Home() {
   const services = [
@@ -25,8 +27,9 @@ export default function Home() {
     {
       icon: <Shield className="w-12 h-12" />,
       title: "Treinamentos de NR-12",
-      description: "Capacitação completa em segurança de máquinas e equipamentos conforme Norma Regulamentadora NR-12. Treinamentos práticos e certificados reconhecidos.",
-      features: ["Certificação NR-12", "Treinamento Prático", "Conformidade Legal"]
+      description: "Capacitação completa em segurança de máquinas e equipamentos conforme Norma Regulamentadora NR-12. Somos parceiros oficiais da Gautica, plataforma líder em gestão de NR-12.",
+      features: ["Certificação NR-12", "Plataforma Gautica", "Conformidade Legal"],
+      partner: true
     },
     {
       icon: <Smartphone className="w-12 h-12" />,
@@ -121,7 +124,12 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card key={index} className="hover:shadow-lg transition-shadow relative">
+                {service.partner && (
+                  <div className="absolute top-4 right-4">
+                    <Badge className="bg-accent text-accent-foreground">Parceiro Gautica</Badge>
+                  </div>
+                )}
                 <CardHeader>
                   <div className="flex items-start gap-4">
                     <div className="text-primary bg-primary/10 p-3 rounded-lg">
@@ -133,7 +141,7 @@ export default function Home() {
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="space-y-4">
                   <div className="flex flex-wrap gap-2">
                     {service.features.map((feature, idx) => (
                       <Badge key={idx} variant="secondary">
@@ -142,6 +150,20 @@ export default function Home() {
                       </Badge>
                     ))}
                   </div>
+                  {service.partner && (
+                    <div className="pt-4 border-t">
+                      <Button variant="outline" size="sm" className="w-full" asChild>
+                        <a 
+                          href="https://gautica.com/Register/Register.aspx" 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Teste Grátis Gautica
+                        </a>
+                      </Button>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
@@ -159,40 +181,8 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Briefcase className="w-5 h-5 text-primary" />
-                  Área de Projetos em Desenvolvimento
-                </CardTitle>
-                <CardDescription>
-                  Esta seção será preenchida com seus projetos anteriores. Você poderá adicionar informações sobre:
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <h4 className="font-semibold text-sm">Exemplo: Implementação NR-12</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Adequação completa de linha de produção com 15 máquinas, incluindo treinamento de equipe e certificação.
-                    </p>
-                  </div>
-                  <div className="space-y-2">
-                    <h4 className="font-semibold text-sm">Exemplo: App de Gestão Industrial</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Desenvolvimento de aplicativo mobile com IA para controle de manutenção preventiva e inspeções.
-                    </p>
-                  </div>
-                </div>
-                <div className="pt-4 border-t">
-                  <p className="text-sm text-muted-foreground italic">
-                    💡 Dica: Entre em contato para adicionar seus projetos reais nesta seção. Você poderá incluir 
-                    descrições detalhadas, resultados alcançados, fotos e depoimentos de clientes.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="max-w-6xl mx-auto">
+            <ProjectGallery />
           </div>
         </div>
       </section>

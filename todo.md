@@ -15,3 +15,5 @@
 - [x] Criar 6 imagens de exemplo para galeria de projetos
 - [x] Implementar galeria de imagens na seção de Projetos Anteriores
 - [x] Alterar nome de Industra Safe para Cassio Cleones em todo o site e PDF
+- [x] Remover informações fictícias e deixar apenas 3 grandes áreas reais
+- [x] Limpar carrossel de projetos deixando apenas imagens

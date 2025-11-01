@@ -2,55 +2,57 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
-  CheckCircle2, 
+  Code2, 
   Shield, 
-  Zap, 
-  Smartphone, 
+  TrendingDown,
   Mail, 
   Phone,
-  Briefcase,
-  Award,
-  Users,
-  TrendingUp,
-  ExternalLink
+  ExternalLink,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
-import ProjectGallery from "@/components/ProjectGallery";
+import { useState } from "react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 export default function Home() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const services = [
     {
-      icon: <TrendingUp className="w-12 h-12" />,
-      title: "Gestão Ágil de Projetos",
-      description: "Implementação de metodologias ágeis para otimizar processos e aumentar a produtividade da sua equipe. Scrum, Kanban e frameworks personalizados para sua realidade.",
-      features: ["Scrum & Kanban", "Sprint Planning", "Métricas de Performance"]
+      icon: <Code2 className="w-12 h-12" />,
+      title: "Criar Aplicativos Web e Páginas de Portfólio Profissional",
+      description: "Desenvolvimento de websites responsivos, aplicativos web modernos e portfólios profissionais personalizados para sua marca.",
+      image: "/area1.jpg"
     },
     {
       icon: <Shield className="w-12 h-12" />,
-      title: "Treinamentos de NR-12",
-      description: "Capacitação completa em segurança de máquinas e equipamentos conforme Norma Regulamentadora NR-12. Somos parceiros oficiais da Gautica, plataforma líder em gestão de NR-12.",
-      features: ["Certificação NR-12", "Plataforma Gautica", "Conformidade Legal"],
-      partner: true
+      title: "Treinamentos NR-12 - Parceria Gautica",
+      description: "Capacitação especializada em segurança de máquinas e equipamentos. Somos parceiros oficiais da Gautica, plataforma líder em gestão de NR-12.",
+      image: "/area2.jpg",
+      link: "https://gautica.com/Register/Register.aspx"
     },
     {
-      icon: <Smartphone className="w-12 h-12" />,
-      title: "Criação de Aplicativos por IA",
-      description: "Desenvolvimento de aplicativos personalizados utilizando inteligência artificial de última geração. Soluções inovadoras para automatizar e modernizar seu negócio.",
-      features: ["IA Generativa", "Apps Customizados", "Automação Inteligente"]
-    },
-    {
-      icon: <Zap className="w-12 h-12" />,
-      title: "Inspeções Elétricas",
-      description: "Inspeções técnicas detalhadas de instalações elétricas industriais e comerciais. Laudos técnicos, identificação de não conformidades e soluções preventivas.",
-      features: ["Laudos Técnicos", "NR-10", "Manutenção Preventiva"]
+      icon: <TrendingDown className="w-12 h-12" />,
+      title: "Gestão Ágil de Dívidas",
+      description: "Consultoria e implementação de metodologias ágeis para gestão eficiente de dívidas e otimização financeira.",
+      image: "/area3.jpg"
     }
   ];
 
-  const stats = [
-    { icon: <Briefcase className="w-8 h-8" />, value: "50+", label: "Projetos Concluídos" },
-    { icon: <Users className="w-8 h-8" />, value: "200+", label: "Profissionais Treinados" },
-    { icon: <Award className="w-8 h-8" />, value: "100%", label: "Conformidade Legal" },
-    { icon: <CheckCircle2 className="w-8 h-8" />, value: "15+", label: "Anos de Experiência" }
+  const galleryImages = [
+    { id: 1, title: "Criar Aplicativos Web e Páginas de Portfólio Profissional", image: "/area1.jpg" },
+    { id: 2, title: "Treinamentos NR-12 - Parceria Gautica", image: "/area2.jpg" },
+    { id: 3, title: "Gestão Ágil de Dívidas", image: "/area3.jpg" }
   ];
+
+  const handlePrevious = () => {
+    setCurrentIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -61,7 +63,7 @@ export default function Home() {
             <img src="/logo.png" alt="Cassio Cleones" className="h-10 w-10" />
             <div>
               <h1 className="text-xl font-bold text-primary">CASSIO CLEONES</h1>
-              <p className="text-xs text-muted-foreground">Industrial Safety & Technology Services</p>
+              <p className="text-xs text-muted-foreground">Soluções Profissionais</p>
             </div>
           </div>
           <nav className="hidden md:flex gap-6">
@@ -77,15 +79,14 @@ export default function Home() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-8">
             <Badge variant="outline" className="text-sm px-4 py-1">
-              Soluções Profissionais em Segurança Industrial e Tecnologia
+              Soluções Profissionais em Tecnologia e Segurança
             </Badge>
             <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
-              Transforme sua <span className="text-primary">Segurança</span> e{" "}
-              <span className="text-accent">Tecnologia</span> Industrial
+              Transforme sua <span className="text-primary">Visão</span> em{" "}
+              <span className="text-accent">Realidade</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Com mais de 10 anos de experiência e mais de 5 projetos em grandes indústrias da região. 
-              Especialista em Gestão Ágil, Treinamentos NR-12, Desenvolvimento de Aplicativos com IA e Inspeções Elétricas.
+              Especialista em desenvolvimento web, treinamentos NR-12 e gestão ágil de dívidas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg" asChild>
@@ -96,19 +97,6 @@ export default function Home() {
               </Button>
             </div>
           </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 max-w-4xl mx-auto">
-            {stats.map((stat, index) => (
-              <Card key={index} className="text-center">
-                <CardContent className="pt-6 space-y-2">
-                  <div className="flex justify-center text-primary">{stat.icon}</div>
-                  <div className="text-3xl font-bold">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -116,73 +104,94 @@ export default function Home() {
       <section id="servicos" className="py-20 bg-background">
         <div className="container">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold">Serviços Especializados</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Nossas Áreas de Atuação</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Soluções completas para segurança industrial, gestão de projetos e inovação tecnológica
+              Três grandes áreas onde posso ajudar seu negócio
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow relative">
-                {service.partner && (
-                  <div className="absolute top-4 right-4">
-                    <Badge className="bg-accent text-accent-foreground">Parceiro Gautica</Badge>
-                  </div>
-                )}
+              <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-start gap-4">
                     <div className="text-primary bg-primary/10 p-3 rounded-lg">
                       {service.icon}
                     </div>
                     <div className="flex-1">
-                      <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
+                      <CardTitle className="text-lg mb-2">{service.title}</CardTitle>
                       <CardDescription className="text-base">{service.description}</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex flex-wrap gap-2">
-                    {service.features.map((feature, idx) => (
-                      <Badge key={idx} variant="secondary">
-                        <CheckCircle2 className="w-3 h-3 mr-1" />
-                        {feature}
-                      </Badge>
-                    ))}
-                  </div>
-                  {service.partner && (
-                    <div className="pt-4 border-t">
-                      <Button variant="outline" size="sm" className="w-full" asChild>
-                        <a 
-                          href="https://gautica.com/Register/Register.aspx" 
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Teste Grátis Gautica
-                        </a>
-                      </Button>
-                    </div>
-                  )}
-                </CardContent>
+                {service.link && (
+                  <CardContent>
+                    <Button variant="outline" size="sm" className="w-full" asChild>
+                      <a 
+                        href={service.link} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Teste Grátis Gautica
+                      </a>
+                    </Button>
+                  </CardContent>
+                )}
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* Projects Gallery Section */}
       <section id="projetos" className="py-20 bg-muted/30">
         <div className="container">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold">Projetos Anteriores</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Exemplos de trabalhos realizados com excelência e comprometimento
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold">Áreas de Atuação</h2>
           </div>
 
-          <div className="max-w-6xl mx-auto">
-            <ProjectGallery />
+          <div className="max-w-4xl mx-auto">
+            {/* Gallery Carousel */}
+            <div className="relative">
+              <div 
+                className="relative w-full h-96 bg-muted rounded-lg overflow-hidden cursor-pointer"
+                onClick={() => setSelectedImage(galleryImages[currentIndex].image)}
+              >
+                <img
+                  src={galleryImages[currentIndex].image}
+                  alt={galleryImages[currentIndex].title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+
+              {/* Navigation Buttons */}
+              <button
+                onClick={handlePrevious}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={handleNext}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+
+              {/* Indicators */}
+              <div className="flex justify-center gap-2 mt-4">
+                {galleryImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentIndex ? "bg-primary w-8" : "bg-muted-foreground"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -244,7 +253,7 @@ export default function Home() {
                     <div className="pt-4">
                       <Button className="w-full" size="lg" asChild>
                         <a 
-                          href="https://wa.me/5581988482955?text=Olá! Gostaria de saber mais sobre os serviços da Industra Safe." 
+                          href="https://wa.me/5581988482955?text=Olá! Gostaria de saber mais sobre os serviços." 
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -269,7 +278,7 @@ export default function Home() {
               <img src="/logo.png" alt="Cassio Cleones" className="h-8 w-8" />
               <div>
                 <p className="text-sm font-semibold">CASSIO CLEONES</p>
-                <p className="text-xs text-muted-foreground">Industrial Safety & Technology Services</p>
+                <p className="text-xs text-muted-foreground">Soluções Profissionais</p>
               </div>
             </div>
             <p className="text-sm text-muted-foreground">
@@ -278,6 +287,19 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Image Modal */}
+      <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>
+        <DialogContent className="max-w-4xl max-h-[90vh]">
+          {selectedImage && (
+            <img
+              src={selectedImage}
+              alt="Projeto"
+              className="w-full h-full object-cover rounded-lg"
+            />
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

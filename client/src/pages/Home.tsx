@@ -22,21 +22,22 @@ export default function Home() {
     {
       icon: <Code2 className="w-12 h-12" />,
       title: "Criar Aplicativos Web e Páginas de Portfólio Profissional",
-      description: "Desenvolvimento de websites responsivos, aplicativos web modernos e portfólios profissionais personalizados para sua marca.",
+      description: "Desenvolvimento de websites responsivos, aplicativos web modernos e portfólios profissionais personalizados para sua marca. Com aplicação de IA - Inteligência Artificial para otimização e automação.",
       image: "/area1.jpg"
     },
     {
       icon: <Shield className="w-12 h-12" />,
       title: "Treinamentos NR-12 - Parceria Gautica",
-      description: "Capacitação especializada em segurança de máquinas e equipamentos. Somos parceiros oficiais da Gautica, plataforma líder em gestão de NR-12.",
+      description: "Capacitação especializada em segurança de máquinas e equipamentos. Somos parceiros oficiais da Gautica, plataforma líder em gestão de NR-12. Com aplicação de IA - Inteligência Artificial para diagnóstico e conformidade.",
       image: "/area2.jpg",
       link: "https://gautica.com/Register/Register.aspx"
     },
     {
       icon: <TrendingDown className="w-12 h-12" />,
       title: "Gestão Ágil de Dívidas",
-      description: "Consultoria e implementação de metodologias ágeis para gestão eficiente de dívidas e otimização financeira.",
-      image: "/area3.jpg"
+      description: "Consultoria e implementação de metodologias ágeis para gestão eficiente de dívidas e otimização financeira. Com aplicação de IA - Inteligência Artificial para análise e previsão.",
+      image: "/area3.jpg",
+      link: "https://cassiocleones.kpages.online/devoenaonego"
     }
   ];
 
@@ -60,10 +61,12 @@ export default function Home() {
       <header className="border-b sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="Cassio Cleones" className="h-10 w-10" />
-            <div>
-              <h1 className="text-xl font-bold text-primary">CASSIO CLEONES</h1>
-              <p className="text-xs text-muted-foreground">Soluções Profissionais</p>
+            <div className="flex items-center gap-2">
+              <img src="/logo.png" alt="Cassio Cleones" className="h-10 w-10" />
+              <div>
+                <h1 className="text-xl font-bold text-primary">CASSIO CLEONES</h1>
+                <p className="text-xs text-muted-foreground">Soluções Profissionais</p>
+              </div>
             </div>
           </div>
           <nav className="hidden md:flex gap-6">
@@ -133,7 +136,7 @@ export default function Home() {
                         rel="noopener noreferrer"
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />
-                        Teste Grátis Gautica
+                        {service.title.includes("Gautica") ? "Teste Grátis Gautica" : "Saiba Mais"}
                       </a>
                     </Button>
                   </CardContent>

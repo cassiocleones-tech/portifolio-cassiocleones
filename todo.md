@@ -17,3 +17,6 @@
 - [x] Alterar nome de Industra Safe para Cassio Cleones em todo o site e PDF
 - [x] Remover informações fictícias e deixar apenas 3 grandes áreas reais
 - [x] Limpar carrossel de projetos deixando apenas imagens
+- [x] Adicionar logo no cabeçalho
+- [x] Inserir informações sobre aplicação de IA em todos os campos
+- [x] Adicionar link do treinamento completo na seção de Gestão de Dívidas

@@ -20,3 +20,5 @@
 - [x] Adicionar logo no cabeçalho
 - [x] Inserir informações sobre aplicação de IA em todos os campos
 - [x] Adicionar link do treinamento completo na seção de Gestão de Dívidas
+- [x] Alterar "Projetos" para "Areas de Atuacao" na navegação
+- [x] Atualizar PDF com informações de IA e link do treinamento

@@ -71,7 +71,7 @@ export default function Home() {
           </div>
           <nav className="hidden md:flex gap-6">
             <a href="#servicos" className="text-sm font-medium hover:text-primary transition-colors">Serviços</a>
-            <a href="#projetos" className="text-sm font-medium hover:text-primary transition-colors">Projetos</a>
+            <a href="#projetos" className="text-sm font-medium hover:text-primary transition-colors">Areas de Atuacao</a>
             <a href="#contato" className="text-sm font-medium hover:text-primary transition-colors">Contato</a>
           </nav>
         </div>

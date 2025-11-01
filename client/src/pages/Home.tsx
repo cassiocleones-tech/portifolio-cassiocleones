@@ -58,9 +58,9 @@ export default function Home() {
       <header className="border-b sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="Industra Safe" className="h-10 w-10" />
+            <img src="/logo.png" alt="Cassio Cleones" className="h-10 w-10" />
             <div>
-              <h1 className="text-xl font-bold text-primary">INDUSTRA SAFE</h1>
+              <h1 className="text-xl font-bold text-primary">CASSIO CLEONES</h1>
               <p className="text-xs text-muted-foreground">Industrial Safety & Technology Services</p>
             </div>
           </div>
@@ -84,8 +84,8 @@ export default function Home() {
               <span className="text-accent">Tecnologia</span> Industrial
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Especialista em Gestão Ágil, Treinamentos NR-12, Desenvolvimento de Aplicativos com IA 
-              e Inspeções Elétricas. Soluções completas para modernizar e proteger seu negócio.
+              Com mais de 10 anos de experiência e mais de 5 projetos em grandes indústrias da região. 
+              Especialista em Gestão Ágil, Treinamentos NR-12, Desenvolvimento de Aplicativos com IA e Inspeções Elétricas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg" asChild>
@@ -266,14 +266,14 @@ export default function Home() {
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-3">
-              <img src="/logo.png" alt="Industra Safe" className="h-8 w-8" />
+              <img src="/logo.png" alt="Cassio Cleones" className="h-8 w-8" />
               <div>
-                <p className="text-sm font-semibold">INDUSTRA SAFE</p>
+                <p className="text-sm font-semibold">CASSIO CLEONES</p>
                 <p className="text-xs text-muted-foreground">Industrial Safety & Technology Services</p>
               </div>
             </div>
             <p className="text-sm text-muted-foreground">
-              © 2025 Industra Safe. Todos os direitos reservados.
+              © 2025 Cassio Cleones. Todos os direitos reservados.
             </p>
           </div>
         </div>

@@ -14,3 +14,4 @@
 - [x] Adicionar informação sobre parceria Gautica no website e PDF
 - [x] Criar 6 imagens de exemplo para galeria de projetos
 - [x] Implementar galeria de imagens na seção de Projetos Anteriores
+- [x] Alterar nome de Industra Safe para Cassio Cleones em todo o site e PDF

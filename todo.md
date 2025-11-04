@@ -22,3 +22,6 @@
 - [x] Adicionar link do treinamento completo na seção de Gestão de Dívidas
 - [x] Alterar "Projetos" para "Areas de Atuacao" na navegação
 - [x] Atualizar PDF com informações de IA e link do treinamento
+- [x] Criar página para Gestão de Dívidas com banner do ebook e links
+- [x] Criar página para Treinamento NR-12 com informações do PDF
+- [x] Atualizar link da Gautica para https://gautica.com/?fyd=MzgyMDg=

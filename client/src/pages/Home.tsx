@@ -28,16 +28,18 @@ export default function Home() {
     {
       icon: <Shield className="w-12 h-12" />,
       title: "Treinamentos NR-12 - Parceria Gautica",
-      description: "Capacitação especializada em segurança de máquinas e equipamentos. Somos parceiros oficiais da Gautica, plataforma líder em gestão de NR-12. Com aplicação de IA - Inteligência Artificial para diagnóstico e conformidade.",
+      description: "Capacitacao especializada em seguranca de maquinas e equipamentos. Somos parceiros oficiais da Gautica, plataforma lider em gestao de NR-12. Com aplicacao de IA - Inteligencia Artificial para diagnostico e conformidade.",
       image: "/area2.jpg",
-      link: "https://gautica.com/Register/Register.aspx"
+      link: "/nr12",
+      isInternal: true
     },
     {
       icon: <TrendingDown className="w-12 h-12" />,
-      title: "Gestão Ágil de Dívidas",
-      description: "Consultoria e implementação de metodologias ágeis para gestão eficiente de dívidas e otimização financeira. Com aplicação de IA - Inteligência Artificial para análise e previsão.",
+      title: "Gestao Agil de Dividas",
+      description: "Consultoria e implementacao de metodologias ageis para gestao eficiente de dividas e otimizacao financeira. Com aplicacao de IA - Inteligencia Artificial para analise e previsao.",
       image: "/area3.jpg",
-      link: "https://cassiocleones.kpages.online/devoenaonego"
+      link: "/gestao-dividas",
+      isInternal: true
     }
   ];
 
@@ -130,14 +132,21 @@ export default function Home() {
                 {service.link && (
                   <CardContent>
                     <Button variant="outline" size="sm" className="w-full" asChild>
-                      <a 
-                        href={service.link} 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        {service.title.includes("Gautica") ? "Teste Grátis Gautica" : "Saiba Mais"}
-                      </a>
+                      {service.isInternal ? (
+                        <a href={service.link}>
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Saiba Mais
+                        </a>
+                      ) : (
+                        <a 
+                          href={service.link} 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Teste Gratis Gautica
+                        </a>
+                      )}
                     </Button>
                   </CardContent>
                 )}

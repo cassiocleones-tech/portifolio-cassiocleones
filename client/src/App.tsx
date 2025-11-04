@@ -5,13 +5,16 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import NR12Training from "./pages/NR12Training";
+import DebtManagement from "./pages/DebtManagement";
 
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
+      <Route path="" component={Home} />
+      <Route path="/nr12" component={NR12Training} />
+      <Route path="/gestao-dividas" component={DebtManagement} />
+      <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
   );

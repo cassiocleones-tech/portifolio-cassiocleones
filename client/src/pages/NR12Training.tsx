@@ -136,8 +136,8 @@ export default function NR12Training() {
             <Card>
               <CardContent className="pt-6">
                 <p className="text-muted-foreground mb-6">
-                  Somos parceiros oficiais da Gautica, plataforma líder em gestão de NR-12. 
-                  Utilizamos a metodologia Ágil para entrega do projeto com a mais alta qualidade.
+                  Somos parceiros oficiais da Gautica, plataforma lider em gestao de NR-12. 
+                  Utilizamos a metodologia Agil para entrega do projeto com a mais alta qualidade.
                 </p>
                 <Button size="lg" className="w-full" asChild>
                   <a
@@ -146,7 +146,7 @@ export default function NR12Training() {
                     rel="noopener noreferrer"
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    Acessar Plataforma Gautica
+                    Conhecer GAUTICA
                   </a>
                 </Button>
               </CardContent>

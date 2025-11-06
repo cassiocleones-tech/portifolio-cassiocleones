@@ -30,8 +30,8 @@ export default function Home() {
       title: "Treinamentos NR-12 - Parceria Gautica",
       description: "Capacitacao especializada em seguranca de maquinas e equipamentos. Somos parceiros oficiais da Gautica, plataforma lider em gestao de NR-12. Com aplicacao de IA - Inteligencia Artificial para diagnostico e conformidade.",
       image: "/area2.jpg",
-      link: "/nr12",
-      isInternal: true
+      link: "https://gautica.com/?fyd=MzgyMDg=",
+      buttonText: "Teste gratis a Gautica"
     },
     {
       icon: <TrendingDown className="w-12 h-12" />,
@@ -39,7 +39,7 @@ export default function Home() {
       description: "Consultoria e implementacao de metodologias ageis para gestao eficiente de dividas e otimizacao financeira. Com aplicacao de IA - Inteligencia Artificial para analise e previsao.",
       image: "/area3.jpg",
       link: "/gestao-dividas",
-      isInternal: true
+      buttonText: "Saiba Mais"
     }
   ];
 
@@ -132,21 +132,14 @@ export default function Home() {
                 {service.link && (
                   <CardContent>
                     <Button variant="outline" size="sm" className="w-full" asChild>
-                      {service.isInternal ? (
-                        <a href={service.link}>
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Saiba Mais
-                        </a>
-                      ) : (
-                        <a 
-                          href={service.link} 
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Teste Gratis Gautica
-                        </a>
-                      )}
+                      <a 
+                        href={service.link} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        {service.buttonText || "Saiba Mais"}
+                      </a>
                     </Button>
                   </CardContent>
                 )}

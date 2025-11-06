@@ -31,7 +31,8 @@ export default function Home() {
       description: "Capacitacao especializada em seguranca de maquinas e equipamentos. Somos parceiros oficiais da Gautica, plataforma lider em gestao de NR-12. Com aplicacao de IA - Inteligencia Artificial para diagnostico e conformidade.",
       image: "/area2.jpg",
       link: "https://gautica.com/?fyd=MzgyMDg=",
-      buttonText: "Teste gratis a Gautica"
+      buttonText: "Teste gratis a Gautica",
+      descriptionLink: "/nr12-servicos"
     },
     {
       icon: <TrendingDown className="w-12 h-12" />,
@@ -120,12 +121,18 @@ export default function Home() {
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-start gap-4">
-                    <div className="text-primary bg-primary/10 p-3 rounded-lg">
+                    <div className="text-primary bg-primary/10 p-3 rounded-lg flex-shrink-0">
                       {service.icon}
                     </div>
                     <div className="flex-1">
-                      <CardTitle className="text-lg mb-2">{service.title}</CardTitle>
-                      <CardDescription className="text-base">{service.description}</CardDescription>
+                      <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
+                      {service.descriptionLink ? (
+                        <a href={service.descriptionLink} className="text-base text-muted-foreground hover:text-primary transition-colors cursor-pointer">
+                          {service.description}
+                        </a>
+                      ) : (
+                        <CardDescription className="text-base">{service.description}</CardDescription>
+                      )}
                     </div>
                   </div>
                 </CardHeader>

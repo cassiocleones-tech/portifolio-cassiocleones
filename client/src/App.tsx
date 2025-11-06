@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import NR12Training from "./pages/NR12Training";
+import NR12Services from "./pages/NR12Services";
 import DebtManagement from "./pages/DebtManagement";
 
 function Router() {
@@ -13,6 +14,7 @@ function Router() {
     <Switch>
       <Route path="" component={Home} />
       <Route path="/nr12" component={NR12Training} />
+      <Route path="/nr12-servicos" component={NR12Services} />
       <Route path="/gestao-dividas" component={DebtManagement} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />

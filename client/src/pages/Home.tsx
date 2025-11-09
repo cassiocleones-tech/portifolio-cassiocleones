@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "wouter";
 import { 
   Code2, 
   Shield, 
@@ -127,9 +128,11 @@ export default function Home() {
                     <div className="flex-1">
                       <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
                       {service.descriptionLink ? (
-                        <a href={service.descriptionLink} className="text-base text-muted-foreground hover:text-primary transition-colors cursor-pointer">
-                          {service.description}
-                        </a>
+                        <Link href={service.descriptionLink}>
+                          <a className="text-base text-muted-foreground hover:text-primary transition-colors cursor-pointer">
+                            {service.description}
+                          </a>
+                        </Link>
                       ) : (
                         <CardDescription className="text-base">{service.description}</CardDescription>
                       )}

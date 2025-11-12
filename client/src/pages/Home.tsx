@@ -29,7 +29,7 @@ export default function Home() {
     {
       icon: <Shield className="w-12 h-12" />,
       title: "Treinamentos NR-12 - Parceria Gautica",
-      description: "Capacitacao especializada em seguranca de maquinas e equipamentos. Somos parceiros oficiais da Gautica, plataforma lider em gestao de NR-12. Com aplicacao de IA - Inteligencia Artificial para diagnostico e conformidade.",
+      description: "Capacitacao especializada em seguranca de maquinas e equipamentos. Sou parceiro oficial da Gautica, plataforma lider em gestao de NR-12. Com aplicacao de IA - Inteligencia Artificial para diagnostico e conformidade.",
       image: "/area2.jpg",
       link: "https://gautica.com/?fyd=MzgyMDg=",
       buttonText: "Teste gratis a Gautica",
@@ -40,7 +40,7 @@ export default function Home() {
       title: "Gestao Agil de Dividas",
       description: "Consultoria e implementacao de metodologias ageis para gestao eficiente de dividas e otimizacao financeira. Com aplicacao de IA - Inteligencia Artificial para analise e previsao.",
       image: "/area3.jpg",
-      link: "/gestao-dividas",
+      link: "https://wa.me/5581988482955",
       buttonText: "Saiba Mais"
     }
   ];

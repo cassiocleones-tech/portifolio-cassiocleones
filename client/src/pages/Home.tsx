@@ -129,9 +129,9 @@ export default function Home() {
                       <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
                       {service.descriptionLink ? (
                         <Link href={service.descriptionLink}>
-                          <a className="text-base text-muted-foreground hover:text-primary transition-colors cursor-pointer">
+                          <span className="text-base text-muted-foreground hover:text-primary transition-colors cursor-pointer block">
                             {service.description}
-                          </a>
+                          </span>
                         </Link>
                       ) : (
                         <CardDescription className="text-base">{service.description}</CardDescription>

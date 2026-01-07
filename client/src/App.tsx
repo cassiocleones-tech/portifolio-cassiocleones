@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import NR12Training from "./pages/NR12Training";
 import NR12Services from "./pages/NR12Services";
 import DebtManagement from "./pages/DebtManagement";
+import Troubleshooting from "./pages/Troubleshooting";
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/nr12" component={NR12Training} />
       <Route path="/nr12-servicos" component={NR12Services} />
       <Route path="/gestao-dividas" component={DebtManagement} />
+      <Route path="/troubleshooting" component={Troubleshooting} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

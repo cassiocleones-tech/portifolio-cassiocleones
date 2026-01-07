@@ -28,6 +28,7 @@ interface Problem {
 
 export default function Troubleshooting() {
   const [expandedId, setExpandedId] = useState<number | null>(null);
+  const [selectedSeverity, setSelectedSeverity] = useState<string | null>(null);
 
   const problems: Problem[] = [
     {
@@ -158,6 +159,18 @@ export default function Troubleshooting() {
     }
   };
 
+  const severityOptions = [
+    { value: null, label: "Todos", count: problems.length },
+    { value: "critica", label: "Crítica", count: problems.filter(p => p.severity === "critica").length },
+    { value: "alta", label: "Alta", count: problems.filter(p => p.severity === "alta").length },
+    { value: "media", label: "Média", count: problems.filter(p => p.severity === "media").length },
+    { value: "baixa", label: "Baixa", count: problems.filter(p => p.severity === "baixa").length }
+  ];
+
+  const filteredProblems = selectedSeverity 
+    ? problems.filter(p => p.severity === selectedSeverity)
+    : problems;
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -187,9 +200,31 @@ export default function Troubleshooting() {
             </p>
           </div>
 
+          {/* Filter Section */}
+          <div className="mb-8 p-4 bg-muted/50 rounded-lg">
+            <h3 className="text-sm font-semibold mb-4">Filtrar por Severidade:</h3>
+            <div className="flex flex-wrap gap-2">
+              {severityOptions.map((option) => (
+                <button
+                  key={option.value || "todos"}
+                  onClick={() => setSelectedSeverity(option.value)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                    selectedSeverity === option.value
+                      ? "bg-primary text-primary-foreground shadow-md"
+                      : "bg-background border border-border hover:border-primary"
+                  }`}
+                >
+                  {option.label}
+                  <span className="ml-2 text-xs opacity-70">({option.count})</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Problems List */}
           <div className="space-y-4">
-            {problems.map((problem) => (
+            {filteredProblems.length > 0 ? (
+              filteredProblems.map((problem) => (
               <Card 
                 key={problem.id}
                 className="hover:shadow-lg transition-shadow cursor-pointer"
@@ -275,7 +310,13 @@ export default function Troubleshooting() {
                   </CardContent>
                 )}
               </Card>
-            ))}
+              ))
+            ) : (
+              <div className="text-center py-12">
+                <AlertCircle className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                <p className="text-muted-foreground">Nenhum problema encontrado com essa severidade.</p>
+              </div>
+            )}
           </div>
 
           {/* Contact Section */}

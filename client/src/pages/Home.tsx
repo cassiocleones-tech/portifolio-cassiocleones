@@ -269,7 +269,7 @@ export default function Home() {
                     <div className="pt-4">
                       <Button className="w-full" size="lg" asChild>
                         <a 
-                          href="https://wa.me/5581988482955?text=Olá! Gostaria de saber mais sobre os serviços." 
+                          href="https://wa.me/5581988482955?text=Olá, eu gostaria de saber mais sobre os serviços, escolha uma opção e aguarde:%0A1. Criação de aplicativos web e páginas profissionais %0A2. Treinamento NR-12%0A3. Gestão ágil" 
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -277,6 +277,18 @@ export default function Home() {
                           Chamar no WhatsApp
                         </a>
                       </Button>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4 border-t pt-6">
+                    <h3 className="font-semibold text-lg">Escanear QR Code</h3>
+                    <p className="text-sm text-muted-foreground">Aponte a câmera para iniciar uma conversa no WhatsApp</p>
+                    <div className="flex justify-center">
+                      <img 
+                        src="/whatsapp-qrcode.png" 
+                        alt="QR Code WhatsApp" 
+                        className="w-48 h-48 border-4 border-primary rounded-lg p-2 bg-white"
+                      />
                     </div>
                   </div>
                 </div>
